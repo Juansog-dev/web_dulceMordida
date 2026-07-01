@@ -1,30 +1,30 @@
-import especial1 from "../assets/imagenes/postresbaner.jpg";
-
-const imagenes = new Array(20).fill(especial1);
+const textos = new Array(10).fill(" Dulce Mordida, sabor en cada mordida • ");
 
 export default function Carusel() {
   return (
-    <div className="overflow-hidden bg-[#b8a496]">
+    <div className="overflow-hidden bg-linear-to-r from-[#f7ede6] via-[#d9b8a0] to-[#f7ede6] py-4">
       <div className="flex w-max animate-marquee">
-        {/* PRIMER BLOQUE */}
-        <div className="flex gap-6">
-          {imagenes.map((img, i) => (
-            <img
+        {/* bloque 1 */}
+        <div className="flex gap-10 whitespace-nowrap">
+          {textos.map((texto, i) => (
+            <span
               key={i}
-              src={img}
-              className="h-20 w-auto rounded-xl flex-shrink-0"
-            />
+              className="text-[#6f5348] text-xl font-semibold tracking-[4px]"
+            >
+              {texto}
+            </span>
           ))}
         </div>
 
-        {/* DUPLICADO (CLAVE PARA LOOP INFINITO) */}
-        <div className="flex gap-6">
-          {imagenes.map((img, i) => (
-            <img
+        {/* duplicado para loop infinito */}
+        <div className="flex gap-10 whitespace-nowrap">
+          {textos.map((texto, i) => (
+            <span
               key={"dup-" + i}
-              src={img}
-              className="h-20 w-auto rounded-xl flex-shrink-0"
-            />
+              className="text-[#6f5348] text-xl font-semibold tracking-[4px]"
+            >
+              {texto}
+            </span>
           ))}
         </div>
       </div>

@@ -1,6 +1,26 @@
+import {
+  faFacebookF,
+  faInstagram,
+  faLinkedin,
+  faXTwitter,
+  faYoutube,
+} from "@fortawesome/free-brands-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
 function Footer() {
+  const redesSociales = [
+    { nombre: "X", vinculo: "http://x.com", icono: faXTwitter },
+    {
+      nombre: "Instagram",
+      vinculo: "http://instagram.com",
+      icono: faInstagram,
+    },
+    { nombre: "Facebook", vinculo: "http://facebook.com", icono: faFacebookF },
+    { nombre: "LinkedIn", vinculo: "http://linkedin.com", icono: faLinkedin },
+    { nombre: "YouTube", vinculo: "http://youtube.com", icono: faYoutube },
+  ];
   return (
-    <footer className="bg-[#5a351c] text-white">
+    <footer className="bg-[#2e1d09] text-white">
       {/* PARTE SUPERIOR */}
       <div className="max-w-7xl mx-auto px-6 py-14 grid gap-10 md:grid-cols-2 lg:grid-cols-4">
         {/* Columna 1 */}
@@ -16,14 +36,16 @@ function Footer() {
           <p className="text-sm mb-6">E: dulcemordida@.com</p>
 
           {/* Redes */}
-          <div className="flex gap-3">
-            {["F", "T", "I"].map((icon, i) => (
-              <div
-                key={i}
-                className="w-10 h-10 flex items-center justify-center rounded-full bg-orange-500 cursor-pointer hover:scale-110 transition"
+          <div className="flex items-center gap-3">
+            {redesSociales.map((iSocial) => (
+              <a
+                key={iSocial.nombre}
+                href={iSocial.vinculo}
+                target="_blank"
+                className="hover:text-accent border border-current size-10 flex items-center justify-center rounded-full"
               >
-                {icon}
-              </div>
+                <FontAwesomeIcon icon={iSocial.icono} />
+              </a>
             ))}
           </div>
         </div>
@@ -78,7 +100,7 @@ function Footer() {
       </div>
 
       {/* PARTE INFERIOR */}
-      <div className="border-t border-white/10">
+      <div className=" bg-[#251809] border-t border-white/10">
         <div className="max-w-7xl mx-auto px-6 py-6 flex flex-col md:flex-row items-center justify-between gap-4">
           {/* Idioma */}
           <select className="bg-transparent border border-white/30 px-3 py-1 rounded text-sm">

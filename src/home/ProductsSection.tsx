@@ -3,10 +3,10 @@ import especial2 from "../assets/imagenes/postresbaner2.jpg";
 
 function Especialidades() {
   return (
-    <section className="bg-[#f8f1ed] px-6 py-24">
+    <section className="bg-[#faf5f2] px-6 py-24">
       <div className="mx-auto grid max-w-7xl gap-8 lg:grid-cols-2">
         {/* CARD 1 */}
-        <article className="group relative h-[420px] overflow-hidden rounded-lg">
+        <article className="group relative h-105 overflow-hidden ">
           <img
             src={especial1}
             alt="Especialidad Dulce Mordida"
@@ -36,7 +36,7 @@ function Especialidades() {
         </article>
 
         {/* CARD 2 */}
-        <article className="group relative h-[420px] overflow-hidden rounded-lg">
+        <article className="group relative h-105 overflow-hidden ">
           <img
             src={especial2}
             alt="Postres especiales"

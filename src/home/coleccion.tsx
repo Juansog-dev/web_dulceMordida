@@ -1,13 +1,13 @@
 import img1 from "../assets/imagenes/postresbaner.jpg";
 
-function GaleriaInspirada({}: { galeria: string[] }) {
+function Coleccion({}: { galeria: string[] }) {
   return (
     <section className="w-full">
-      <div className="relative h-[650px] w-full overflow-hidden">
+      <div className="relative h-162.5 w-full overflow-hidden">
         {}
         <img
           src={img1}
-          alt="Galería Dulce Mordida"
+          alt="Colección Dulce Mordida"
           className="absolute inset-0 h-full w-full object-cover"
         />
 
@@ -38,4 +38,4 @@ function GaleriaInspirada({}: { galeria: string[] }) {
   );
 }
 
-export default GaleriaInspirada;
+export default Coleccion;

@@ -35,34 +35,26 @@ export default function HeroSection() {
       </div>
 
       <div className="relative z-20 mx-auto max-w-7xl px-6 py-20">
-        <div className="max-w-2xl rounded-3xl border border-white/20 bg-white/10 p-8 shadow-2xl backdrop-blur-md md:p-12">
-          <p className="mb-4 text-sm uppercase tracking-[0.4em] text-[#ffe8d6]">
-            Elegancia en cada bocado
-          </p>
-          <h2 className="text-5xl font-bold leading-tight text-white md:text-7xl">
-            Dulce
-            <span className="block text-[#ffd6d6]">Mordida</span>
-          </h2>
-          <p className="mt-6 max-w-xl text-base leading-7 text-[#fff5f0] md:text-lg">
-            Creamos postres artesanales con presentación refinada, sabores
-            delicados y detalles pensados para convertir cada celebración en un
-            recuerdo inolvidable.
-          </p>
+        <p className="mb-4 text-sm uppercase tracking-[0.4em] text-[#a76111]">
+          Elegancia en cada bocado
+        </p>
+        <h2 className="text-5xl font-bold leading-tight text-white md:text-7xl">
+          Dulce
+          <span className="block text-[#ffffff]">Mordida</span>
+        </h2>
+        <p className="mt-6 max-w-xl text-base leading-7 text-[#fff5f0] md:text-lg">
+          Creamos postres artesanales con presentación refinada, sabores
+          delicados y detalles pensados para convertir cada celebración en un
+          recuerdo inolvidable.
+        </p>
 
-          <div className="mt-8 flex flex-wrap gap-4">
-            <a
-              href="#productos"
-              className="rounded-full bg-[#f8d7da] px-7 py-3 font-semibold text-[#6b3e3e] transition hover:scale-105 hover:bg-white"
-            >
-              Ver catálogo
-            </a>
-            <a
-              href="#contacto"
-              className="rounded-full border border-white/50 px-7 py-3 font-semibold text-white transition hover:scale-105 hover:bg-white hover:text-[#6b3e3e]"
-            >
-              Hacer pedido
-            </a>
-          </div>
+        <div className="mt-8 flex flex-wrap gap-4">
+          <a
+            href="#productos"
+            className="  border-white/50 px-7 py-3 font-semibold text-white transition hover:scale-105 hover:bg-white hover:text-[#6b3e3e]"
+          >
+            Comprar ahora
+          </a>
         </div>
       </div>
     </section>

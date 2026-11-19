@@ -48,6 +48,25 @@ const NAV_ITEMS = [
     titulo: "CRUD",
     ruta: "/TablaProductos",
   },
+
+  {
+    id: "marcas",
+    etiqueta: "Marcas",
+    titulo: "Nuestras marcas",
+    ruta: "/marcas",
+  },
+  {
+    id: "mapa",
+    etiqueta: "Mapa",
+    titulo: "ubicacion",
+    ruta: "/mapa",
+  },
+  {
+    id: "grafico",
+    etiqueta: "Grafico",
+    titulo: "Estadisticas",
+    ruta: "/grafico",
+  },
 ];
 
 const MainNav = () => {
@@ -63,11 +82,12 @@ const MainNav = () => {
   };
 
   return (
-    <nav className="bg-[#faf5f2] text-black  sticky z-50 h-25 ">
+    <nav className="bg-[#faf5f2] text-black sticky top-0 z-50 h-25 shadow-sm">
       <div className="mx-auto flex max-w-7xl flex-col items-end gap-7 px-6 py-4 sm:flex-row sm:items-center sm:justify-between h-25">
-        <ul className="hidden md:flex list-none h-full ml-8 items-center">
-          <div className="text-2xl font-bold text-[#a76111] ">
-            Dulce Moridada
+        {/* MENÚ PRINCIPAL ESCRITORIO */}
+        <ul className="hidden md:flex list-none h-full ml-8 items-center gap-6">
+          <div className="text-2xl font-bold text-[#a76111] mr-4">
+            Dulce Mordida
           </div>
 
           {NAV_ITEMS.map((itemMenu) => (
@@ -83,23 +103,23 @@ const MainNav = () => {
           ))}
         </ul>
 
-        <div className="flex items-center gap-4 ml-auto justify-end ">
+        {/* BOTONES E ICONOS DE ACCIÓN */}
+        <div className="flex items-center gap-4 ml-auto justify-end">
           <NavLink to="/buscar" className={navLinkStyles} title="buscar">
             <Search size={20} />
           </NavLink>
 
+          {/* Control de Autenticación */}
           {isAuthenticated ? (
-            /* 1. CUANDO SÍ INICIÓ SESIÓN -> Va a /perfil */
             <NavLink
               to="/perfil"
               className={navLinkStyles}
               title="Datos del usuario"
             >
-              <FontAwesomeIcon icon={faIdCard} className="size-5" />
+              <FontAwesomeIcon icon={faIdCard} className="size-5 mr-1" />
               Perfil
             </NavLink>
           ) : (
-            /* 2. CUANDO NO ESTÁ LOGUEADO -> Va a /login */
             <NavLink
               to="/login"
               className={navLinkStyles}
@@ -108,6 +128,7 @@ const MainNav = () => {
               <FontAwesomeIcon icon={faUser} className="size-5" />
             </NavLink>
           )}
+
           <NavLink
             to="/MeGustas"
             title="Me gusta"
@@ -118,14 +139,16 @@ const MainNav = () => {
 
           <NavLink
             to="/carrito"
-            title=" Carrito"
+            title="Carrito"
             className="relative text-[#6f5348] transition-colors duration-300 hover:text-[#9a5a2f]"
           >
             <ShoppingCart size={20} />
           </NavLink>
-          <div className="f">
+
+          {/* BOTÓN HAMBURGUESA (MÓVIL) - Corregido el div "f" */}
+          <div className="flex items-center md:hidden">
             <button
-              className="md:hidden p-2 hover:text-accent transition-colors cursor-pointer"
+              className="p-2 text-[#6f5348] hover:text-[#9a5a2f] transition-colors cursor-pointer"
               onClick={() => setMenuMovilVisible(!menuMovilVisible)}
             >
               <FontAwesomeIcon
@@ -137,15 +160,20 @@ const MainNav = () => {
         </div>
       </div>
 
+      {/* MENÚ DESPLEGABLE MÓVIL - Corregido fondo adaptado a la paleta */}
       {menuMovilVisible && (
-        <div className="md:hidden bg-white border-t border-white/10 absolute w-full shadow-2xl animate-in slide-in-from-top duration-300">
-          <ul className="flex flex-col list-none py-4">
+        <div className="md:hidden bg-[#faf5f2] border-t border-gray-200 absolute top-25 left-0 w-full shadow-2xl animate-in slide-in-from-top duration-300 z-50">
+          <ul className="flex flex-col list-none py-4 px-6 space-y-3">
             {NAV_ITEMS.map((itemMenu) => (
-              <li key={itemMenu.id}>
+              <li
+                key={itemMenu.id}
+                className="border-b border-gray-100 pb-2 last:border-0"
+              >
                 <NavLink
                   to={itemMenu.ruta}
                   title={itemMenu.titulo}
                   className={navLinkStyles}
+                  onClick={() => setMenuMovilVisible(false)} // Cierra el menú al hacer clic
                 >
                   {itemMenu.etiqueta}
                 </NavLink>

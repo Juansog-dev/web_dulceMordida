@@ -23,6 +23,8 @@ export const CONFIG = {
     POSTRES_INSERT: "/postresinsert.php",
     POSTRES_UPDATE: "/postresupdate.php",
     POSTRES_DELETE: "/postresdelete.php",
+    MARCAS: "/postres_api.php",
+    TABLA: "/api_grafico.php",
   },
 
   VERSION: "1.0.0",

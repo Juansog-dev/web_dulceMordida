@@ -77,7 +77,8 @@ const router = createBrowserRouter([
           {
             path: "TablaProductos",
             lazy: async () => ({
-              Component: (await import("./pages/postres")).default,
+              Component: (await import("./pages/postresTabla/index.tsx"))
+                .default,
             }),
           },
         ],
@@ -113,6 +114,25 @@ const router = createBrowserRouter([
         path: "perfil",
         lazy: async () => ({
           Component: (await import("./pages/perfil")).default,
+        }),
+      },
+      {
+        path: "marcas",
+        lazy: async () => ({
+          Component: (await import("./pages/marcas")).default,
+        }),
+      },
+      {
+        path: "mapa",
+        lazy: async () => ({
+          Component: (await import("./pages/mapa/mapa.tsx")).default,
+        }),
+      },
+      {
+        path: "grafico",
+        lazy: async () => ({
+          Component: (await import("./pages/tablaproduc/GraficoPostres.tsx"))
+            .default,
         }),
       },
     ],

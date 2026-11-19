@@ -259,8 +259,7 @@ const ProductosGrid = () => {
 
                   {/* 4. DATO: Descripción Corta */}
                   <p className="mt-4 text-sm leading-relaxed text-gray-600">
-                    {productoSeleccionado.descripcion ||
-                      "Integer ante arcu, accumsan a, consectetuer eget, posuere ut, mauris. Praesent adipiscing..."}
+                    {productoSeleccionado.descripcion}
                   </p>
 
                   {/* Fila del Selector de Cantidad + Botón Añadir al Carrito */}
@@ -268,9 +267,7 @@ const ProductosGrid = () => {
                     {/* Selector de cantidad numérico */}
                     <div className="flex items-center border border-gray-300 px-2">
                       <button
-                        onClick={() =>
-                          setCantidad((prev) => Math.max(1, prev - 1))
-                        }
+                        onClick={() => setCantidad((c) => Math.max(1, c - 1))}
                         className="px-2 text-gray-500 hover:text-black cursor-pointer font-medium"
                       >
                         -
@@ -282,7 +279,7 @@ const ProductosGrid = () => {
                         className="w-10 text-center text-sm font-medium focus:outline-hidden"
                       />
                       <button
-                        onClick={() => setCantidad((prev) => prev + 1)}
+                        onClick={() => setCantidad((c) => c + 1)}
                         className="px-2 text-gray-500 hover:text-black cursor-pointer font-medium"
                       >
                         +

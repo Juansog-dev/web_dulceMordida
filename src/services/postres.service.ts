@@ -1,12 +1,5 @@
 import { CONFIG } from "../config";
-
-export interface Postre {
-  id: number; // Mapeado exactamente a tu columna 'id'
-  nombre: string;
-  descripcion: string;
-  precio: number;
-  stock: number;
-}
+import type { Postre } from "../types/postres";
 
 export const fetchPostres = async (signal?: AbortSignal): Promise<Postre[]> => {
   const API_URL = `${CONFIG.API_URL}${CONFIG.ENDPOINTS.POSTRES}`;

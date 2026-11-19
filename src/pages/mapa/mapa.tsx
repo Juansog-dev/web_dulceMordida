@@ -8,7 +8,7 @@ import {
   Polyline,
 } from "@vis.gl/react-google-maps";
 
-const API_KEY = "AIzaSyDgOsgmNqt94uHkm_5UuuOuyNcEqk8igFA";
+const API_KEY = "";
 
 const center = { lat: -12.086980093336383, lng: -76.975792052738 };
 const DulceMordida = { lat: -12.086980093336383, lng: -76.975792052738 };
